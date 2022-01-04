@@ -5,7 +5,7 @@
 142例良性样本，28例作为测试集，114例作为训练集。335例恶性实性肺结节样本，67例测试集，268例训练集。下图可见对于年龄测试集训练集均实现分层抽样。  
 ![年龄抽样](https://github.com/crushseven-7/missoin/blob/main/pic/sample_age.png "年龄抽样")  
 ## sldingwindow  
-使用8kb nonverlap窗口进行定量。删除端粒中心粒，删除样本中reads长度极值（99.9%）。最终共计333949个特征。去除掉定量结果全部为0的特征最终剩余330013个window进行筛选。最终使用弹性网选定16个marker，在测试集中AUC为0.64。  
+使用8kb nonverlap窗口进行定量。删除端粒中心粒，删除样本中reads长度极值（99.9%）。最终共计333949个特征。去除掉定量结果全部为0的特征最终剩余330013个window进行筛选。最终使用弹性网选定16个marker，在测试集中AUC为0.64。AUC可见在打分中建部分样本的预测效果较差，根据比较详细病理未发现规律。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_slidingwindow.png "AUC")
 ## endmotif  
 ## fragment ratio  
