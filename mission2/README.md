@@ -15,4 +15,5 @@
 使用8kb nonoverlap滑动窗口去除端粒中心粒与low mapbality区域后分别对60-150短序列以及150-220长序列分别定量并根据delfi方法对定量结果进行GC矫正。矫正后得到每个窗口短reads/长reads比值作为特征。进行10X较差验证，最终筛选78个特征进行弹性网模型训练。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_ratio.png "AUC")
 ## CNA  
-## CRAG  
+CNA分析使用QDNAseq包对样本dedup bam文件直接分析。使用软件包内置10kb滑动窗口作为定量区间，去除black-list区间并经过GC矫正后得到样本在每个窗口的copy number分值。之后会对分值进行标准化以及去除极端值。最后使用DNAcopy对分值进行最终标准化。使用最终打分分值作为特征进行建模。最终挑选68个特征使用弹性网建模。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_CNA.png "AUC")
