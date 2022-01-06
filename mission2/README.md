@@ -13,6 +13,7 @@
 ## endmotif 
 之前的研究表明cfDNA存在偏好性末端motif。因此这里鉴别出每一条cfDNA 5'端4-mer end motif（一共4^4=256种），并以其出现频率作为特征进行建模。
 在训练集中，一共筛选出31种良恶性差异的4-mer end-motif。通过svmLinear对这31种4-mer end-motif的频率进行训练。结果表明：在训练集中AUC=0.8,测试集AUC=0.729，不存在过拟合。
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/end_motif_5hmC_batchInf_fdr0.005_svmLinear.png "AUC")
 
 ## fragment ratio  
 ## CNA  
