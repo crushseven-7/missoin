@@ -23,3 +23,5 @@ CNA分析使用QDNAseq包对样本dedup bam文件直接分析。使用软件包�
 # 模型整合  
 后续进行模型整合工作。剔除slidingwindow模型，共计四种组学模型进行整合。四种模型打分作为特征建模效果差于两模型打分整合。符合预期，由于genebody与ratio的train AUC过高导致模型学习深度降低，但是在测试集中无法更好的泛化。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_two_score.png "AUC")
+后续对特特征整合进行整合。由于四个组学共计筛选出266个特征，因此直接对特征融合会产生严重的过拟合。首先使用boruta包进行了降维，后对特征融合。并尝试了不同的组合。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_combine_feature.png "AUC")
