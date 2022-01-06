@@ -12,5 +12,7 @@
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_genebody.png "AUC")
 ## endmotif  
 ## fragment ratio  
+使用8kb nonoverlap滑动窗口去除端粒中心粒与low mapbality区域后分别对60-150短序列以及150-220长序列分别定量并根据delfi方法对定量结果进行GC矫正。矫正后得到每个窗口短reads/长reads比值作为特征。进行10X较差验证，最终筛选78个特征进行弹性网模型训练。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_ratio.png "AUC")
 ## CNA  
 ## CRAG  
