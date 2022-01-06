@@ -20,3 +20,6 @@
 ## CNA  
 CNA分析使用QDNAseq包对样本dedup bam文件直接分析。使用软件包内置10kb滑动窗口作为定量区间，去除black-list区间并经过GC矫正后得到样本在每个窗口的copy number分值。之后会对分值进行标准化以及去除极端值。最后使用DNAcopy对分值进行最终标准化。使用最终打分分值作为特征进行建模。最终挑选68个特征使用弹性网建模。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_CNA.png "AUC")   
+# 模型整合  
+后续进行模型整合工作。剔除slidingwindow模型，共计四种组学模型进行整合。四种模型打分作为特征建模效果差于两模型打分整合。符合预期，由于genebody与ratio的train AUC过高导致模型学习深度降低，但是在测试集中无法更好的泛化。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_two_score.png "AUC")
