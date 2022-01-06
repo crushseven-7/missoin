@@ -12,9 +12,11 @@
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_genebody.png "AUC")
 ## endmotif 
 之前的研究表明cfDNA存在偏好性末端motif。因此这里鉴别出每一条cfDNA 5'端4-mer end motif（一共4^4=256种），并以其出现频率作为特征进行建模。
-在训练集中，一共筛选出31种良恶性差异的4-mer end-motif。通过svmLinear对这31种4-mer end-motif的频率进行训练。结果表明：在训练集中AUC=0.8,测试集AUC=0.729，不存在过拟合。
-![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/end_motif_5hmC_batchInf_fdr0.005_svmLinear.png "AUC")
-
+在训练集中，一共筛选出31种良恶性差异的4-mer end-motif。通过svmLinear对这31种4-mer end-motif的频率进行训练。结果表明：在训练集中AUC=0.8,测试集AUC=0.729，不存在过拟合。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/end_motif_5hmC_batchInf_fdr0.005_svmLinear.png "AUC")  
 ## fragment ratio  
+使用8kb nonoverlap滑动窗口去除端粒中心粒与low mapbality区域后分别对60-150短序列以及150-220长序列分别定量并根据delfi方法对定量结果进行GC矫正。矫正后得到每个窗口短reads/长reads比值作为特征。进行10X较差验证，最终筛选78个特征进行弹性网模型训练。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_ratio.png "AUC") 
 ## CNA  
-## CRAG  
+CNA分析使用QDNAseq包对样本dedup bam文件直接分析。使用软件包内置10kb滑动窗口作为定量区间，去除black-list区间并经过GC矫正后得到样本在每个窗口的copy number分值。之后会对分值进行标准化以及去除极端值。最后使用DNAcopy对分值进行最终标准化。使用最终打分分值作为特征进行建模。最终挑选68个特征使用弹性网建模。  
+![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission2_CNA.png "AUC")   
