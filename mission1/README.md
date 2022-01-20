@@ -8,4 +8,4 @@ mission文章分三步走对健康及肺结节样本进行分析。整体分析�
 ![KEGG](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_1kegg.png "KEGG")  
 后续进行了三种组学的建模分析。genebody组学对358个差异基因进行了特征筛选最终保留了182个特征进行模型训练。建模使用svmRadial，最终模型训练集0.9347测试集0.9315。fragmentation筛选出305feature，使用弹性网建模，最终模型训练集0.9849，验证集0.96334。endmotif。三组学模型的testA AUC见下图。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_1combineAUC.png "AUC")
-![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_1combineAUC.png "Fragmentation AUC")
+![AUC](https://github.com/hxlei/mission/blob/main/fragment_auc.png "Fragmentation AUC")
