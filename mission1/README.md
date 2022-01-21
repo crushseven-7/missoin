@@ -10,7 +10,7 @@ mission文章分三步走对健康及肺结节样本进行分析。整体分析�
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_1combineAUC.png "AUC")  
 
 ## step1
-end motif 模型
+end motif 模型  
 基于所有end motif（256）的tsne结果表明，mission1的step1的808例样本不存在明显的批次效应。但是上海地区只有肺结节样本，且肺结节只来源于上海，所以可能需要补充上海地区的健康样本来进一步验证。  
 ![tsne展开](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_tsne_batch_case_control_5hmC_end_motif.tiff "tsne展开")   
 ![tsne展开](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_tsne_region_case_control_5hmC_end_motif.tiff "tsne展开")   
