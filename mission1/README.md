@@ -11,12 +11,11 @@ mission文章分三步走对健康及肺结节样本进行分析。整体分析�
 
 ## step1
 end motif 模型
-基于所有end motif（256）的tsne结果表明，mission1的step1的808例样本不存在明显的批次效应。但是上海地区只有肺结节样本，且肺结节只来源于上海，所以可能需要补充上海地区的健康样本来进一步验证。
-![tsne展开](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_tsne_batch_case_control_5hmC_end_motif.tiff "tsne展开")
-由于没有发现明显的批次效应，所以认为模型的结果是可靠的。
-在训练集中，一共筛选出135种健康vs肺部结节患者差异的4-mer end-motif（FDR=0.001）。
-通过svmLinear对这135种4-mer end-motif的频率进行训练并在测试集验证。
-结果表明：在训练集中AUC=0.996, 测试集AUC=0.971。说明模型可以十分有效地区分健康和肺部结节患者。
+基于所有end motif（256）的tsne结果表明，mission1的step1的808例样本不存在明显的批次效应。但是上海地区只有肺结节样本，且肺结节只来源于上海，所以可能需要补充上海地区的健康样本来进一步验证。  
+![tsne展开](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_tsne_batch_case_control_5hmC_end_motif.tiff "tsne展开")  
+由于没有发现明显的批次效应，所以认为模型的结果是可靠的。  
+在训练集中，一共筛选出135种健康vs肺部结节患者差异的4-mer end-motif（FDR=0.001）。  
+通过svmLinear对这135种4-mer end-motif的频率进行训练并在测试集验证。结果表明：在训练集中AUC=0.996, 测试集AUC=0.971。说明模型可以十分有效地区分健康和肺部结节患者。
 
 
 
