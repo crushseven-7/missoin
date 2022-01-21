@@ -9,7 +9,8 @@ mission文章分三步走对健康及肺结节样本进行分析。整体分析�
 后续进行了三种组学的建模分析。genebody组学对358个差异基因进行了特征筛选最终保留了182个特征进行模型训练。建模使用svmRadial，最终模型训练集0.9347测试集0.9315。fragmentation筛选出305feature，使用弹性网建模，最终模型训练集0.9849，验证集0.96334。endmotif。三组学模型的testA AUC见下图。  
 ![AUC](https://github.com/crushseven-7/missoin/blob/main/pic/mission1_1combineAUC.png "AUC")  
 
-#step1 end motif 模型
+## step1
+end motif 模型
 基于所有end motif（256）的tsne结果表明，mission1的step1的808例样本不存在明显的批次效应。但是上海地区只有肺结节样本，且肺结节只来源于上海，所以可能需要补充上海地区的健康样本来进一步验证。
 由于没有发现明显的批次效应，所以认为模型的结果是可靠的。
 在训练集中，一共筛选出135种健康vs肺部结节患者差异的4-mer end-motif（FDR=0.001）。
